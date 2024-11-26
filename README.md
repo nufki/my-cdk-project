@@ -40,5 +40,11 @@ Test:
 `curl -X GET "https://y7oc8ukbp2.execute-api.eu-west-1.amazonaws.com/prod/greet?name=Kei"`
 {"message":"Hello, Kei!","timestamp":"2024-11-26T11:01:37.950Z"}
 
-CORS:
-#todo
+## CORS
+CORS (Cross-Origin Resource Sharing) is a security feature implemented by browsers to prevent malicious websites from accessing resources (such as APIs) on a different domain than their own.
+CORS occur in when developing web apps. Not if you call an endpoint in via CURL/Postman or the Browser directly.
+How to enable the endpoint to interact within a frontend app (such as react or angular):
+
+1) Enable CORS on API Gateway (on resources)
+2) Lambda Response Missing Headers: Ensure every Lambda response includes Access-Control-Allow-Origin.
+3) Add header in the lambda to control origins... (See this example)
